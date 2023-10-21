@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth/auth.service';
 import { routes } from 'src/app/shared/routes/routes';
 
@@ -24,16 +25,21 @@ export class LoginComponent implements OnInit {
     return this.form.controls;
   }
 
-  constructor(public auth: AuthService) {}
+  constructor(public auth: AuthService, private readonly router: Router) {}
+
   ngOnInit(): void {
     if (localStorage.getItem('authenticated')) {
       localStorage.removeItem('authenticated');
     }
   }
 
-  loginFormSubmit() {
+  async loginFormSubmit() {
     if (this.form.valid) {
-      this.auth.login({username: String(this.form.controls.email.value), password:String(this.form.controls.password.value)});
+      const request = await this.auth.login({username: String(this.form.controls.email.value), password:String(this.form.controls.password.value)});
+      localStorage.setItem('authenticated', 'true');
+      localStorage.setItem("AuthToken", request.jwt.token);
+      localStorage.setItem("RefreshToken", request.jwt.refreshtoken);
+      this.router.navigate([routes.adminDashboard]);
     }
   }
   togglePassword() {

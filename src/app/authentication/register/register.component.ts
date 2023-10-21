@@ -11,9 +11,9 @@ import { routes } from 'src/app/shared/routes/routes';
 })
 export class RegisterComponent {
   public routes = routes;
-  public CustomControler!: number | string | boolean ;
-  public passwordClass  = false;
-  public confirmPasswordClass  = false
+  public CustomControler!: number | string | boolean;
+  public passwordClass = false;
+  public confirmPasswordClass = false
   public isValidConfirmPassword = false;
 
   form = new FormGroup({
@@ -27,21 +27,27 @@ export class RegisterComponent {
     return this.form.controls;
   }
 
-  constructor(private router:Router,private auth: AuthService) { }
+  constructor(private router: Router, private auth: AuthService) { }
 
 
-  submit() {
+  async submit(): Promise<void> {
     if (this.form.value.password != this.form.value.confirmPassword) {
       this.isValidConfirmPassword = true;
     } else {
       this.isValidConfirmPassword = false;
-      this.auth.registro({username: String(this.form.controls.username.value), email: String(this.form.controls.email.value),password:String(this.form.controls.password.value)});
+      await this.auth.registro({
+        username: String(this.form.controls.username.value),
+        email: String(this.form.controls.email.value),
+        password: String(this.form.controls.password.value)
+      });
+
+      this.router.navigate([routes.login]);
     }
   }
-  passwordFunc(){
+  passwordFunc() {
     this.passwordClass = !this.passwordClass
   }
-  confirmPasswordFunc(){
+  confirmPasswordFunc() {
     this.confirmPasswordClass = !this.confirmPasswordClass
   }
 }
