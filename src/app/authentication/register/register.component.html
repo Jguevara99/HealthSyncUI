@@ -20,14 +20,14 @@
               <div class="login-right-wrap">
                 <div class="account-logo">
                   <a [routerLink]="routes.adminDashboard"
-                    ><img src="assets/img/login-logo.png" alt=""
+                    ><img src="assets/img/" alt=""
                   /></a>
                 </div>
-                <h2>Getting Started</h2>
+                <h2>Registro</h2>
                 <!-- Form -->
                 <form [formGroup]="form" (ngSubmit)="submit()">
                   <div class="form-group">
-                    <label>Full Name <span class="login-danger">*</span></label>
+                    <label>Nombre Completo <span class="login-danger">*</span></label>
                     <input
                       class="form-control"
                       type="text"
@@ -47,7 +47,7 @@
                           f['fullName'].errors['required']
                         "
                       >
-                        Name is required.
+                        Nombre Requerido.
                       </div>
                     </div>
                     <div *ngIf="CustomControler !== 0" class="invalid-feedback">
@@ -55,7 +55,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label>Email <span class="login-danger">*</span></label>
+                    <label>Correo <span class="login-danger">*</span></label>
                     <input
                       class="form-control"
                       type="text"
@@ -73,10 +73,11 @@
                           f['email'].errors && f['email'].errors['required']
                         "
                       >
-                        Email is required.
+                        Correo Recorrido.
                       </div>
                       <div *ngIf="f['email'].errors && f['email'].errors['email']">
-                        Please, enter valid email address.
+
+Por favor ingrese una dirección de correo electrónico válida.
                       </div>
                     </div>
                     <div *ngIf="CustomControler !== 0" class="invalid-feedback">
@@ -84,7 +85,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label>Password <span class="login-danger">*</span></label>
+                    <label>Contraseña <span class="login-danger">*</span></label>
                     <input
                       class="form-control pass-input"
                       [type]="passwordClass ? 'text' : 'password'"
@@ -104,7 +105,7 @@
                           f['password'].errors['required']
                         "
                       >
-                        Password is required.
+                        Contraseña Requerida.
                       </div>
                     </div>
                     <span (click)="passwordFunc()" [ngClass] = "passwordClass ? 'feather icon-eye' : 'feather icon-eye-off'"
@@ -113,7 +114,7 @@
                   </div>
                   <div class="form-group">
                     <label
-                      >Confirm Password
+                      >Confirmar Contraseña
                       <span class="login-danger">*</span></label
                     >
                     <input
@@ -139,40 +140,40 @@
                           f['confirmPassword'].errors['required']
                         "
                       >
-                        Confirm Password is required.
+                        Confirmacion Requerida.
                       </div>
                     </div>
                     <div
                       *ngIf="isValidConfirmPassword"
                       class="invalid-feedback"
                     >
-                      Password not matching
+                    La contraseña no coincide
                     </div>
                     <span (click)="confirmPasswordFunc()" [ngClass] = "confirmPasswordClass ? 'feather icon-eye' : 'feather icon-eye-off'"
                       class="profile-views confirm-password"
                     ></span>
                   </div>
-                  <div class="forgotpass">
+                  <!-- <div class="forgotpass">
                     <div class="remember-me">
                       <label
                         class="custom_check mr-2 mb-0 d-inline-flex remember-me"
                       >
-                        I agree to the
-                        <a href="javascript:;">&nbsp; terms of service </a
-                        >&nbsp; and
-                        <a href="javascript:;">&nbsp; privacy policy </a>
+                      Estoy de acuerdo con la
+                        <a href="javascript:;">&nbsp; términos de servicio </a
+                        >&nbsp; y
+                        <a href="javascript:;">&nbsp; política de privacidad </a>
                         <input type="checkbox" name="radio" />
                         <span class="checkmark"></span>
                       </label>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="form-group login-btn">
                     <button
                       [disabled]="form.invalid"
                       class="btn btn-primary btn-block"
                       type="submit"
                     >
-                      Sign up
+                      Registrar
                     </button>
                   </div>
                 </form>
@@ -180,8 +181,8 @@
 
                 <div class="next-sign">
                   <p class="account-subtitle">
-                    Already have account?
-                    <a [routerLink]="routes.login">Login</a>
+                    ya tengo cuenta?
+                    <a [routerLink]="routes.login">Acceso</a>
                   </p>
 
                   <!-- Social Login -->

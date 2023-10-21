@@ -79,7 +79,7 @@ export class PatientDashboardComponent implements OnInit {
   slideConfig = { slidesToShow: 3, slidesToScroll: 3, centerMode: true, centerPadding: '30px'
 };
 
- 
+
   public patientDashboard: Array<patientDashboard> = [];
   dataSource!: MatTableDataSource<patientDashboard>;
 
@@ -110,17 +110,17 @@ export class PatientDashboardComponent implements OnInit {
         },
       },
       grid: {
-        show: true, 
+        show: true,
         xaxis: {
           lines: {
             show: false
            }
-         },  
+         },
         yaxis: {
-          lines: { 
-            show: true 
+          lines: {
+            show: true
            }
-         },   
+         },
         },
       dataLabels: {
         enabled: false,
@@ -137,10 +137,10 @@ export class PatientDashboardComponent implements OnInit {
       ],
       xaxis: {
         categories: [
-          'Jan',
+          'En',
           'Feb',
           'Mar',
-          'Apr',
+          'Abr',
           'May',
           'Jun',
           'Jul',
@@ -161,17 +161,17 @@ export class PatientDashboardComponent implements OnInit {
         },
       },
       grid: {
-        show: true, 
+        show: true,
         xaxis: {
           lines: {
             show: false
            }
-         },  
+         },
         yaxis: {
-          lines: { 
-            show: true 
+          lines: {
+            show: true
            }
-         },   
+         },
         },
       dataLabels: {
         enabled: false,
@@ -200,17 +200,17 @@ export class PatientDashboardComponent implements OnInit {
         },
       },
       grid: {
-        show: true, 
+        show: true,
         xaxis: {
           lines: {
             show: false
            }
-         },  
+         },
         yaxis: {
-          lines: { 
-            show: true 
+          lines: {
+            show: true
            }
-         },   
+         },
         },
       responsive: [
         {
@@ -264,17 +264,17 @@ export class PatientDashboardComponent implements OnInit {
         },
       },
       grid: {
-        show: true, 
+        show: true,
         xaxis: {
           lines: {
             show: false
            }
-         },  
+         },
         yaxis: {
-          lines: { 
-            show: true 
+          lines: {
+            show: true
            }
-         },   
+         },
         },
       plotOptions: {
         bar: {
@@ -319,17 +319,17 @@ export class PatientDashboardComponent implements OnInit {
         },
       },
       grid: {
-        show: true, 
+        show: true,
         xaxis: {
           lines: {
             show: false
            }
-         },  
+         },
         yaxis: {
-          lines: { 
-            show: true 
+          lines: {
+            show: true
            }
-         },   
+         },
         },
       dataLabels: {
         enabled: false,
@@ -349,7 +349,7 @@ export class PatientDashboardComponent implements OnInit {
       },
     };
   }
-  
+
   ngOnInit() {
     this.getTableData();
   }
@@ -362,7 +362,7 @@ export class PatientDashboardComponent implements OnInit {
       data.data.map((res: patientDashboard, index: number) => {
         const serialNumber = index + 1;
         if (index >= this.skip && serialNumber <= this.limit) {
-          
+
           this.patientDashboard.push(res);
           this.serialNumberArray.push(serialNumber);
         }
@@ -444,7 +444,7 @@ export class PatientDashboardComponent implements OnInit {
     }
   }
 
-  
+
 selecedList: data[] = [
   {value: '2022'},
   {value: '2021'},

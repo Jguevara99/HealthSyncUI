@@ -14,23 +14,23 @@ export class AddDoctorComponent {
 
   selectedList1: data[] = [
     {value: 'Select Department'},
-    {value: 'Orthopedics'},
-    {value: 'Radiology'},
-    {value: 'Dentist'},
+    {value: 'ortopedia'},
+    {value: 'Radiología'},
+    {value: 'Dentista'},
   ];
   selectedList2: data[] = [
-    {value: 'Select City'},
+    {value: 'Seleccione'},
     {value: 'Alaska'},
     {value: 'Los Angeles'},
   ];
   selectedList3: data[] = [
-    {value: 'Select Country'},
+    {value: 'Seleccionar país'},
     {value: 'Usa'},
     {value: 'Uk'},
     {value: 'Italy'},
   ];
   selectedList4: data[] = [
-    {value: 'Select State'},
+    {value: 'Seleccione Estado'},
     {value: 'Alaska'},
     {value: 'California'},
   ];

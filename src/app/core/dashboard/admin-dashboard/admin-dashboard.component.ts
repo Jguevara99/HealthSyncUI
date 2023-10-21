@@ -12,7 +12,7 @@ import {
   ApexFill,
   ApexGrid,
   ApexStroke,
-  
+
 } from 'ng-apexcharts';
 import { Sort } from '@angular/material/sort';
 import { DataService } from 'src/app/shared/data/data.service';
@@ -62,7 +62,7 @@ export class AdminDashboardComponent {
 
   public recentPatients: Array<recentPatients> = [];
   public upcomingAppointments: Array<upcomingAppointments> = [];
- 
+
   constructor(public data : DataService) {
     this.chartOptionsOne = {
       chart: {
@@ -72,20 +72,20 @@ export class AdminDashboardComponent {
         toolbar: {
           show: false,
         },
-      
+
       },
       grid: {
-        show: true, 
+        show: true,
         xaxis: {
           lines: {
             show: false
            }
-         },  
+         },
         yaxis: {
-          lines: { 
-            show: true 
+          lines: {
+            show: true
            }
-         },   
+         },
         },
       responsive: [
         {
@@ -110,22 +110,22 @@ export class AdminDashboardComponent {
       },
       series: [
         {
-          name: 'Male',
+          name: 'Masculino',
           color: '#2E37A4',
           data: [20, 30, 41, 67, 22, 43, 40, 10, 30, 20, 40],
         },
         {
-          name: 'Female',
+          name: 'Femenino',
           color: '#00D3C7',
           data: [13, 23, 20, 8, 13, 27, 30, 25, 10, 15, 20],
         },
       ],
       xaxis: {
         categories: [
-          'Jan',
+          'Ene',
           'Feb',
           'Mar',
-          'Apr',
+          'Abr',
           'May',
           'Jun',
           'Jul',
@@ -133,7 +133,7 @@ export class AdminDashboardComponent {
           'Sep',
           'Oct',
           'Nov',
-          'Dec',
+          'Dic',
         ],
           axisBorder: {
             show: false, // set to false to hide the vertical gridlines
@@ -177,7 +177,7 @@ export class AdminDashboardComponent {
     this.recentPatients = this.data.recentPatients;
     this.upcomingAppointments = this.data.upcomingAppointments;
   }
-  
+
   public sortData(sort: Sort) {
     const data = this.recentPatients.slice();
     const datas = this.upcomingAppointments.slice();

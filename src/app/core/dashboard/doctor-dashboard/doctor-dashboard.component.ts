@@ -77,17 +77,17 @@ export class DoctorDashboardComponent {
         },
       },
       grid: {
-        show: true, 
+        show: true,
         xaxis: {
           lines: {
             show: false
            }
-         },  
+         },
         yaxis: {
-          lines: { 
-            show: true 
+          lines: {
+            show: true
            }
-         },   
+         },
         },
       dataLabels: {
         enabled: false,
@@ -103,7 +103,7 @@ export class DoctorDashboardComponent {
         },
       ],
       xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        categories: ['Jun', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul'],
       },
     };
     this.chartOptionsTwo = {
@@ -126,7 +126,7 @@ export class DoctorDashboardComponent {
       },
 
       series: [44, 55],
-      labels: ['Male', 'Female'],
+      labels: ['Hombre', 'Femenino'],
       responsive: [
         {
           breakpoint: 480,
@@ -154,17 +154,17 @@ export class DoctorDashboardComponent {
         },
       },
       grid: {
-        show: true, 
+        show: true,
         xaxis: {
           lines: {
             show: false
            }
-         },  
+         },
         yaxis: {
-          lines: { 
-            show: true 
+          lines: {
+            show: true
            }
-         },   
+         },
         },
       responsive: [
         {
@@ -206,18 +206,18 @@ export class DoctorDashboardComponent {
       ],
       xaxis: {
         categories: [
-          'Jan',
+          'Jun',
           'Feb',
           'Mar',
-          'Apr',
+          'Abr',
           'May',
           'Jun',
           'Jul',
-          'Aug',
+          'Ago',
           'Sep',
           'Oct',
           'Nov',
-          'Dec',
+          'Dic',
         ],
       },
     };

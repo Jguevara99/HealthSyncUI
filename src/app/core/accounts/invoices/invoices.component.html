@@ -6,9 +6,9 @@
             <div class="row">
                 <div class="col-sm-12">
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a [routerLink]="routes.invoices">Accounts </a></li>
+                        <li class="breadcrumb-item"><a [routerLink]="routes.invoices">Cuenta </a></li>
                         <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
-                        <li class="breadcrumb-item active">Invoices</li>
+                        <li class="breadcrumb-item active">Facturas</li>
                     </ul>
                 </div>
             </div>
@@ -26,10 +26,10 @@
                             <div class="row align-items-center">
                                 <div class="col">
                                     <div class="doctor-table-blk">
-                                        <h3>Invoice List</h3>
+                                        <h3>Lista Facturas</h3>
                                         <div class="doctor-search-blk">
                                             <div class="top-nav-search table-search-blk">
-                                                    <input  class="form-control" placeholder="Search here" [(ngModel)]="searchDataValue" 
+                                                    <input  class="form-control" placeholder="Search here" [(ngModel)]="searchDataValue"
                                                     (ngModelChange)="searchData(searchDataValue)">
                                                     <a class="btn"><img src="assets/img/icons/search-normal.svg"
                                                             alt=""></a>
@@ -62,7 +62,7 @@
                                 <div class="row">
                                     <div class="col-12 col-md-6 col-xl-4">
                                         <div class="form-group local-forms">
-                                            <label>From </label>
+                                            <label>De </label>
                                             <input class="form-control datetimepicker" type="text" matInput
                                                 [matDatepicker]="picker1">
                                             <mat-datepicker #picker1></mat-datepicker>
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4">
                                         <div class="form-group local-forms">
-                                            <label>To </label>
+                                            <label>A </label>
                                             <input class="form-control datetimepicker" type="text" matInput [matDatepicker]="picker2">
                                             <mat-datepicker #picker2></mat-datepicker>
                                             <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
@@ -79,9 +79,10 @@
                                     </div>
                                     <div class="col-12 col-md-6 col-xl-4 ">
                                         <div class="form-group local-forms">
-                                            <label>Payment Status </label>
-                                            
-                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Select Payment Status">
+                                            <label>Estado de pago </label>
+
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Seleccione
+                                        Estado de pago">
                                           <mat-option *ngFor="let data of selectedList" [value]="data.value">
                                           {{data.value}}
                                           </mat-option>
@@ -91,7 +92,7 @@
                                     <div class="col-12 col-md-6 col-xl-4 ms-auto">
                                         <div class="doctor-submit">
                                             <button type="submit"
-                                                class="btn btn-primary submit-list-form me-2">Search</button>
+                                                class="btn btn-primary submit-list-form me-2">Buscar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -106,12 +107,12 @@
                                                 <input class="form-check-input" type="checkbox" value="something">
                                             </div>
                                         </th>
-                                        <th mat-sort-header="invoiceNumber">Invoice Number</th>
-                                        <th mat-sort-header="patient">Patient</th>
-                                        <th mat-sort-header="createdDate">Created Date</th>
-                                        <th mat-sort-header="dueDate">Due Date</th>
-                                        <th mat-sort-header="amount">Amount</th>
-                                        <th mat-sort-header="status">Status</th>
+                                        <th mat-sort-header="invoiceNumber">Número de factura</th>
+                                        <th mat-sort-header="patient">Paciente</th>
+                                        <th mat-sort-header="createdDate">Fecha de creación</th>
+                                        <th mat-sort-header="dueDate">Fecha de vencimiento</th>
+                                        <th mat-sort-header="amount">Cantidad</th>
+                                        <th mat-sort-header="status">Estado</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -137,14 +138,14 @@
                                                         class="fa fa-ellipsis-v"></i></a>
                                                 <div class="dropdown-menu dropdown-menu-end">
                                                     <a class="dropdown-item" [routerLink]="routes.editInvoice"><i
-                                                            class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+                                                            class="fa-solid fa-pen-to-square m-r-5"></i> Editar</a>
                                                     <a class="dropdown-item" [routerLink]="routes.invoiceView"><i
-                                                            class="feather icon-eye m-r-5"></i> View</a>
+                                                            class="feather icon-eye m-r-5"></i> Ver</a>
                                                     <a class="dropdown-item" href="javascript:;"><i
-                                                            class="feather icon-download m-r-5"></i> Download</a>
+                                                            class="feather icon-download m-r-5"></i> Descargar</a>
                                                     <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
                                                         data-bs-target="#delete_patient"><i
-                                                            class="fa fa-trash-alt m-r-5"></i> Delete</a>
+                                                            class="fa fa-trash-alt m-r-5"></i> Eliminar</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -154,12 +155,13 @@
                             <div class="table_footer">
                                 <div class="col-sm-12 col-md-5">
                                   <div class="dataTables_info">
-                                    Showing {{ serialNumberArray[0] }} to
-                                    {{ serialNumberArray[serialNumberArray.length - 1] }} of
-                                    {{ totalData }} entries
+
+Demostración {{ serialNumberArray[0] }} de
+                                    {{ serialNumberArray[serialNumberArray.length - 1] }} a
+                                    {{ totalData }} entradas
                                   </div>
                                 </div>
-                
+
                                 <div class="col-sm-12 col-md-7">
                                   <div class="pagination_section">
                                     <ul class="pagination">
@@ -174,10 +176,10 @@
                                           class="page-link"
                                           href="javascript:void(0);"
                                           tabindex="-1"
-                                          >Previous</a
+                                          >Previo</a
                                         >
                                       </li>
-                
+
                                       <ng-container
                                         *ngFor="let item of pageNumberArray; let i = index"
                                       >
@@ -237,7 +239,7 @@
                                           </a>
                                         </li>
                                       </ng-container>
-                
+
                                       <li
                                         class="page-item"
                                         [ngClass]="{
@@ -251,7 +253,7 @@
                                           (click)="getMoreData('next')"
                                           class="page-link"
                                           href="javascript:void(0);"
-                                          >Next
+                                          >Siguiente
                                         </a>
                                       </li>
                                     </ul>
