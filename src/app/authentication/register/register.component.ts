@@ -17,7 +17,7 @@ export class RegisterComponent {
   public isValidConfirmPassword = false;
 
   form = new FormGroup({
-    fullName: new FormControl('', [Validators.required]),
+    username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
     confirmPassword: new FormControl('', [Validators.required]),
@@ -29,13 +29,13 @@ export class RegisterComponent {
 
   constructor(private router:Router,private auth: AuthService) { }
 
-  
+
   submit() {
     if (this.form.value.password != this.form.value.confirmPassword) {
       this.isValidConfirmPassword = true;
     } else {
       this.isValidConfirmPassword = false;
-      this.auth.login();
+      this.auth.registro({username: String(this.form.controls.username.value), email: String(this.form.controls.email.value),password:String(this.form.controls.password.value)});
     }
   }
   passwordFunc(){

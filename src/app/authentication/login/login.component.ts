@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   loginFormSubmit() {
     if (this.form.valid) {
-      this.auth.login();
+      this.auth.login({username: String(this.form.controls.email.value), password:String(this.form.controls.password.value)});
     }
   }
   togglePassword() {

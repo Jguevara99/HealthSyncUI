@@ -34,17 +34,17 @@
                       formControlName="fullName"
                       [ngClass]="{
                         'is-invalid':
-                          f['fullName'].touched && f['fullName'].invalid
+                          f['username'].touched && f['username'].invalid
                       }"
                     />
                     <div
-                      *ngIf="f['fullName'].touched && f['fullName'].invalid"
+                      *ngIf="f['username'].touched && f['username'].invalid"
                       class="invalid-feedback"
                     >
                       <div
                         *ngIf="
-                          f['fullName'].errors &&
-                          f['fullName'].errors['required']
+                          f['username'].errors &&
+                          f['username'].errors['required']
                         "
                       >
                         Nombre Requerido.
